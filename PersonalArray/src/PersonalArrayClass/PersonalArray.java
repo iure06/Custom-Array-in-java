@@ -111,5 +111,12 @@ public class PersonalArray {
 
     }
 
+    public <T> void set(int index, T element){
+        if (index > array.length){
+            System.out.println("Index not available");
+        }else{
+            array[index] = element;
+        }
+    }
 
 }

@@ -11,7 +11,7 @@ public class Main {
         myArray.add(7);
         myArray.print();
 
-        myArray.add(4,4);
+        myArray.set(4, 6);
         myArray.print();
 
     }
