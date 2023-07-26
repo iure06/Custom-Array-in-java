@@ -2,19 +2,20 @@ package PersonalArrayClass;
 
 import java.util.Arrays;
 
-public class PersonalArray {
-    Object[] array;
+public class PersonalArray<T> {
+    private T[] array;
 
     public PersonalArray(){
-        array = new Object[1];
+        array = (T[]) new Object[1];
     }
 
-    public <T> void add(T valor){
+    public void add(T valor){
         int index = array.length;
         if (array[index - 1] == null){
             array[index - 1] = valor;
+            array[index - 1] = valor;
         }else{
-            Object[] newArray = new Object[index + 1];
+            T[] newArray = (T[]) new Object[index + 1];
             System.arraycopy(array,0,newArray,0,array.length);
             array = newArray;
             array[index] = valor;
@@ -30,7 +31,7 @@ public class PersonalArray {
     }
 
     public void clear(){
-        array = new Object[1];
+        array = (T[]) new Object[1];
     }
 
     public void isEmpty(){
@@ -51,7 +52,7 @@ public class PersonalArray {
         return null;
     }
 
-    public <T> int indexOf(T element){
+    public int indexOf(T element){
         for (int i = 0; i < array.length; i++) {
             if (element == array[i]){
                 return i;
@@ -60,7 +61,7 @@ public class PersonalArray {
         return -1;
     }
 
-    public <T> void removeElement(T element){
+    public void removeElement(T element){
         int index = indexOf(element);
         if (index < 0){
             System.out.println("Element not found");
@@ -74,7 +75,7 @@ public class PersonalArray {
         if (index > (array.length-1)){
             System.out.println("Index not available");
         }else{
-            Object[] newArray = new Object[array.length-1];
+            T[] newArray = (T[]) new Object[array.length-1];
             for (int i = 0; i < array.length; i++) {
                 if (i > index){
                     newArray[i - 1] = array[i];
@@ -86,12 +87,12 @@ public class PersonalArray {
         }
     }
 
-    public <T> void add(int index, T element){
+    public void add(int index, T element){
 
         if (index > (array.length - 1 )){
             System.out.println("Index not available");
         }else{
-            Object[] newArray = new Object[array.length + 1];
+            T[] newArray = (T[]) new Object[array.length + 1];
             for (int i = 0, j = 0; i < array.length; i++, j++) {
                 if (j == index){
                     newArray[j] = element;
@@ -105,13 +106,9 @@ public class PersonalArray {
             array = newArray;
         }
 
-
-
-
-
     }
 
-    public <T> void set(int index, T element){
+    public void set(int index, T element){
         if (index > array.length){
             System.out.println("Index not available");
         }else{

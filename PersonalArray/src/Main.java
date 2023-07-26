@@ -2,7 +2,7 @@ import PersonalArrayClass.PersonalArray;
 
 public class Main {
     public static void main(String[] args) {
-        PersonalArray myArray = new PersonalArray();
+        PersonalArray<Integer> myArray = new PersonalArray<>();
 
         myArray.add(3);
         myArray.add(2);
